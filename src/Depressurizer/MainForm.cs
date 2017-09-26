@@ -387,6 +387,11 @@ namespace Depressurizer
                 int id = ((GameInfo) g).Id;
                 return Program.GameDB.Games.ContainsKey(id) ? Program.GameDB.Games[id].HltbCompletionist : 0;
             };
+            colTotalTimePlayed.AspectGetter = delegate (object g)
+            {
+                if (g == null) return 0;
+                return ((GameInfo)g).TotalHoursPlayed;
+            };
 
             //Aspect to String Converters
             colNumberOfReviews.AspectToStringConverter = delegate(object obj)

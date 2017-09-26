@@ -55,6 +55,8 @@ namespace Depressurizer {
             this.txtExecutable = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtTimePlayed = new System.Windows.Forms.TextBox();
+            this.lblTotalTimePlayed = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtId
@@ -132,14 +134,26 @@ namespace Depressurizer {
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
+            // txtTimePlayed
+            // 
+            resources.ApplyResources(this.txtTimePlayed, "txtTimePlayed");
+            this.txtTimePlayed.Name = "txtTimePlayed";
+            this.txtTimePlayed.ReadOnly = true;
+            // 
+            // lblTotalTimePlayed
+            // 
+            resources.ApplyResources(this.lblTotalTimePlayed, "lblTotalTimePlayed");
+            this.lblTotalTimePlayed.Name = "lblTotalTimePlayed";
+            // 
             // DlgGame
             // 
             this.AcceptButton = this.cmdOk;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancel;
             this.ControlBox = false;
+            this.Controls.Add(this.txtTimePlayed);
+            this.Controls.Add(this.lblTotalTimePlayed);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtExecutable);
             this.Controls.Add(this.label1);
@@ -177,5 +191,7 @@ namespace Depressurizer {
         private System.Windows.Forms.TextBox txtExecutable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtTimePlayed;
+        private System.Windows.Forms.Label lblTotalTimePlayed;
     }
 }

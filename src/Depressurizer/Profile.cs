@@ -64,7 +64,8 @@ namespace Depressurizer
             XmlName_Game_CategoryList = "categories",
             XmlName_Game_Category = "category",
             XmlName_Game_Executable = "executable",
-            XmlName_Game_LastPlayed = "lastplayed";
+            XmlName_Game_LastPlayed = "lastplayed",
+            XmlName_Game_TotalHoursPlayed = "hoursOnRecord";
 
         // Old Xml names
         private const string XmlName_Old_SteamIDShort = "account_id",
@@ -334,6 +335,7 @@ namespace Depressurizer
                 game.Hidden = XmlUtil.GetBoolFromNode(node[XmlName_Game_Hidden], false);
                 game.Executable = XmlUtil.GetStringFromNode(node[XmlName_Game_Executable], null);
                 game.LastPlayed = XmlUtil.GetIntFromNode(node[XmlName_Game_LastPlayed], 0);
+                game.TotalHoursPlayed = XmlUtil.GetFloatFromNode(node[XmlName_Game_TotalHoursPlayed], 0);
 
                 if (profileVersion < 1)
                 {
@@ -435,6 +437,8 @@ namespace Depressurizer
                     writer.WriteElementString(XmlName_Game_Hidden, g.Hidden.ToString().ToLowerInvariant());
 
                     if (g.LastPlayed != 0) writer.WriteElementString(XmlName_Game_LastPlayed, g.LastPlayed.ToString());
+
+                    if (g.TotalHoursPlayed != 0) writer.WriteElementString(XmlName_Game_TotalHoursPlayed, g.TotalHoursPlayed.ToString());
 
                     if (!g.Executable.Contains("steam://"))
                         writer.WriteElementString(XmlName_Game_Executable, g.Executable);

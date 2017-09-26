@@ -54,6 +54,7 @@ namespace Depressurizer
                 chkFavorite.Checked = Game.IsFavorite();
                 chkHidden.Checked = Game.Hidden;
                 txtId.ReadOnly = true;
+                txtTimePlayed.Text = Game.TotalHoursPlayed.ToString();
             }
             else
             {

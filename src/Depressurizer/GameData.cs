@@ -56,6 +56,7 @@ namespace Depressurizer
         public SortedSet<Category> Categories;
         public GameListingSource Source;
         public int LastPlayed;
+        public double TotalHoursPlayed = 0;
 
         private string _launchStr;
 
@@ -1083,6 +1084,10 @@ namespace Depressurizer
                             includedTypes, GameListingSource.WebProfile, out isNew);
                         if (integratedGame != null)
                         {
+                            XmlNode playedTimeTotalNode = gameNode["hoursOnRecord"];
+                            double totalHoursOnRecord;
+                            if (playedTimeTotalNode != null && double.TryParse(playedTimeTotalNode.InnerText, out totalHoursOnRecord))
+                                integratedGame.TotalHoursPlayed = totalHoursOnRecord;
                             loadedGames++;
                             if (isNew)
                             {

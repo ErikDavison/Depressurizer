@@ -195,6 +195,7 @@ namespace Depressurizer {
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.imglistEarlyAccess = new System.Windows.Forms.ImageList(this.components);
             this.ttHelp = new Depressurizer.Lib.ExtToolTip();
+            this.colTotalTimePlayed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -689,6 +690,7 @@ namespace Depressurizer {
             this.lstGames.AllColumns.Add(this.colLanguageInterface);
             this.lstGames.AllColumns.Add(this.colLanguageSubtitles);
             this.lstGames.AllColumns.Add(this.colLanguageFullAudio);
+            this.lstGames.AllColumns.Add(this.colTotalTimePlayed);
             this.lstGames.AllColumns.Add(this.colFiller);
             this.lstGames.AllowColumnReorder = true;
             this.lstGames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(44)))));
@@ -702,6 +704,7 @@ namespace Depressurizer {
             this.colReviewScore,
             this.colYear,
             this.colLastPlayed,
+            this.colTotalTimePlayed,
             this.colFiller});
             this.lstGames.ContextMenuStrip = this.contextGame;
             this.lstGames.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1527,6 +1530,12 @@ namespace Depressurizer {
             this.imglistEarlyAccess.Images.SetKeyName(1, "early_access_banner_russian.png");
             this.imglistEarlyAccess.Images.SetKeyName(2, "early_access_banner_spanish.png");
             // 
+            // colTotalTimePlayed
+            // 
+            this.colTotalTimePlayed.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            resources.ApplyResources(this.colTotalTimePlayed, "colTotalTimePlayed");
+            this.colTotalTimePlayed.WordWrap = true;
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1731,6 +1740,7 @@ namespace Depressurizer {
         private TableLayoutPanel tblLayoutPanelAutocats;
         private TableLayoutPanel tblLayoutPanelFilterToolbar;
         private ComboBox cboFilter;
+        private BrightIdeasSoftware.OLVColumn colTotalTimePlayed;
     }
 }
 
